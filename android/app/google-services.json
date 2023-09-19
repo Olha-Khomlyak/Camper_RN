@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "3513386840",
+    "firebase_url": "https://camper-dc2c8-default-rtdb.firebaseio.com",
+    "project_id": "camper-dc2c8",
+    "storage_bucket": "camper-dc2c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3513386840:android:a46d30f4524cb55e3c872d",
+        "android_client_info": {
+          "package_name": "com.camper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3513386840-mahflrrvjdjl96auvgecbu4bm06kf39f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI79j0IdId64p6psAflbGBcsWmgfj-muE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3513386840-mahflrrvjdjl96auvgecbu4bm06kf39f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "3513386840-ercts7sgmf44o3f6l85dous88gt5lvno.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.afacar.camper.Camper"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

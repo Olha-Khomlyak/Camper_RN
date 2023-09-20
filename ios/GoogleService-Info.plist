@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>3513386840-ercts7sgmf44o3f6l85dous88gt5lvno.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.3513386840-ercts7sgmf44o3f6l85dous88gt5lvno</string>
 	<key>API_KEY</key>
 	<string>AIzaSyB687xQF0mDMuiyoPAZ-i0X98pqmSIihlg</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.afacar.camper.Camper</string>
+	<string>afacar.camper</string>
 	<key>PROJECT_ID</key>
 	<string>camper-dc2c8</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +25,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:3513386840:ios:91b14748e79c70e93c872d</string>
+	<string>1:3513386840:ios:795ccdbf23cc87493c872d</string>
 	<key>DATABASE_URL</key>
 	<string>https://camper-dc2c8-default-rtdb.firebaseio.com</string>
 </dict>

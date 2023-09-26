@@ -3,10 +3,13 @@ import React, {useEffect} from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { HomeScreenNavigationProp } from '../navigation/types'
 import firestore from '@react-native-firebase/firestore';
+import { observer } from 'mobx-react';
+import CampStore from '../mobx/CampStore';
 
-const Home = () => {
+const Home: React.FC = () => {
 
     const navigation = useNavigation<HomeScreenNavigationProp>()
+
 
     const getData = async () => { 
       const users = await firestore().collection('campsites').get();
@@ -20,12 +23,12 @@ const Home = () => {
   return (
     <View>
       <Text>Home</Text>
-      <Pressable 
-      onPress={() => navigation.navigate('Details', {name: "item.name",birthYear: "item.birth_year"})}>
-      <Text>PRESS ME</Text> 
+      <Text>{CampStore.counter}</Text>
+      <Pressable onPress={() => CampStore.increment()}>
+      <Text>PRESS ME TO ADD</Text> 
       </Pressable>
     </View>
   )
 }
 
-export default Home
+export default observer(Home)

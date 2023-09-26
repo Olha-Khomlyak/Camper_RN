@@ -2,6 +2,7 @@ import * as React from 'react'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import { HomeStackNavigatorParamList } from './types'
 
+
 import Home from '../screens/Home'
 import Details from '../screens/Details'
 

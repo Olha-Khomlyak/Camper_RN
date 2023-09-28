@@ -1,7 +1,7 @@
 import React from 'react';
 import RootNavigator from './src/navigation';
 import { Provider } from 'mobx-react';
-import MobxProvider from './src/mobx/providers/MobxProvider';
+import MobxProvider from './src/mobx/MobxProvider';
 
 
 function App(): JSX.Element {

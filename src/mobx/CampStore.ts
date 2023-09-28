@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
 import {observable, makeObservable, action} from 'mobx'
+import { CampsData } from './types';
 
 
 class CampStore {
@@ -8,18 +8,11 @@ class CampStore {
         makeObservable(this)
       }
 
-    @observable counter = 110;
+    @observable loading = false
+    @observable camps: CampsData[] = []
 
-
-
-    @action increment() {
-        console.log("increment");
-        
-      this.counter++;
-    }
-  
-    @action decrement() {
-      this.counter--;
+    @action addCamp(camp:CampsData) {
+      this.camps.push(camp);
     }
     
 }

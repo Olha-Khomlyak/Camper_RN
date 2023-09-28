@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Provider } from 'mobx-react';
-import CampStore from '../CampStore';
+import CampStore from './CampStore';
 
 interface MobxProviderProps {
     children: ReactNode;

@@ -7,7 +7,7 @@ interface FirestoreGeoPoint {
     [key: string]: string[];
   }
 
-interface CampInfo {
+export interface CampInfo {
 about: string; 
 coordinates:FirestoreGeoPoint;
 features: Features

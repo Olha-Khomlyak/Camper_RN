@@ -1,5 +1,5 @@
 import {observable, makeObservable, action} from 'mobx'
-import { CampsData } from './types';
+import { CampsData,CampInfo } from './types';
 
 
 class CampStore {
@@ -9,9 +9,9 @@ class CampStore {
       }
 
     @observable loading = false
-    @observable camps: CampsData[] = []
+    @observable camps: CampInfo[] = []
 
-    @action addCamp(camp:CampsData) {
+    @action addCamp(camp:CampInfo) {
       this.camps.push(camp);
     }
     

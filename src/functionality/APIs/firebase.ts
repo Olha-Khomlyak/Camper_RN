@@ -1,11 +1,11 @@
 import firestore from '@react-native-firebase/firestore';
-import { CampsData } from '../../mobx/types';
+import { CampsData,CampInfo } from '../../mobx/types';
 import CampStore from '../../mobx/CampStore';
 
 export const getData = async () => {
     try {
         const querySnapshot = await firestore().collection('campsites').get();
-        const data = querySnapshot.docs.map(x => x.data() as CampsData)
+        const data = querySnapshot.docs.map(x => x.data() as CampInfo)
         console.log("FETCHED DATA:", data);
         
         // Update the observable data with the fetched data

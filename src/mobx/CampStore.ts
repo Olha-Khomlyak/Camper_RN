@@ -12,7 +12,9 @@ class CampStore {
     @observable camps: CampInfo[] = []
 
     @action addCamp(camp:CampInfo) {
-      this.camps.push(camp);
+      if (!this.camps.includes(camp)) {
+        this.camps.push(camp);
+      }
     }
     
 }

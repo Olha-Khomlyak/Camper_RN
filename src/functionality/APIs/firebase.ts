@@ -4,6 +4,7 @@ import CampStore from '../../mobx/CampStore';
 
 export const getData = async () => {
     try {
+        CampStore.loading = true; 
         const querySnapshot = await firestore().collection('campsites').get();
         const data = querySnapshot.docs.map(x => x.data() as CampInfo)
         console.log("FETCHED DATA:", data);

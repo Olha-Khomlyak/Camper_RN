@@ -1,14 +1,14 @@
 import React from 'react';
 import RootNavigator from './src/navigation';
 import { Provider } from 'mobx-react';
-import MobxProvider from './src/mobx/MobxProvider';
+import CampStore from './src/mobx/CampStore';
 
 
 function App(): JSX.Element {
   return (
-    <MobxProvider>
+    <Provider campStore={CampStore}>
     <RootNavigator />
-    </MobxProvider>
+    </Provider>
   );
 }
 

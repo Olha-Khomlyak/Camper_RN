@@ -3,7 +3,6 @@ import { CampsData,CampInfo } from './types';
 
 
 class CampStore {
-
     constructor() {
         makeObservable(this)
       }
@@ -12,11 +11,16 @@ class CampStore {
     @observable camps: CampInfo[] = []
 
     @action addCamp(camp:CampInfo) {
-      if (!this.camps.includes(camp)) {
-        this.camps.push(camp);
-      }
+         // Check if the camp already exists in the array
+    const exists = this.camps.some((existingCamp) => existingCamp.name === camp.name);
+    if (!exists) {
+      this.camps.push(camp);
+    } else {
+      return
+    }
     }
     
 }
 
-export default new CampStore()
+const campStore = new CampStore();
+export default campStore;

@@ -16,7 +16,8 @@ import CampStore from '../mobx/CampStore';
 import {getData} from '../functionality/APIs/firebase';
 import {toJS} from 'mobx';
 import {CampInfo} from '../mobx/types';
-import { Icon } from '@rneui/themed';
+import {Icon} from '@rneui/themed';
+import Colors from '../constnats/colors';
 
 const Home: React.FC = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
@@ -30,12 +31,15 @@ const Home: React.FC = () => {
       style={{
         justifyContent: 'space-between',
         flexDirection: 'row',
-        margin: 4,
+        margin: 5,
         alignItems: 'center',
+        borderWidth:1,
+        borderColor: Colors.GRAY_ASPARAGUS,
+        padding:5, borderRadius:15
       }}>
       <View style={{flexDirection: 'row'}}>
         <Image
-          style={{width: 50, height: 50}}
+          style={{width: 50, height: 50, borderRadius:15}}
           source={{uri: item.imageURLString}}
         />
         <View style={{marginLeft: 10}}>
@@ -44,31 +48,31 @@ const Home: React.FC = () => {
         </View>
       </View>
 
-      <Text>{item.price}</Text>
+      <Text>{item.price} TL</Text>
       <Icon
-        name='edit'
-        type='material'
-        color='#f50'
-        onPress={() => console.log('hello')} />
+        name="chevron-forward-outline"
+        type="ionicon"
+        color={Colors.DARK_VANILLA}
+        onPress={() => console.log('hello')}
+      />
     </View>
   );
 
   const _separator = () => (
     <View
       style={{
-        borderBottomColor: 'black',
+        borderBottomColor: 'red',
         borderBottomWidth: StyleSheet.hairlineWidth,
       }}
     />
   );
 
   return (
-    <SafeAreaView>
-      <FlatList
-        data={toJS(CampStore.camps)}
-        renderItem={({item}) => _renderItem(item)}
-        ItemSeparatorComponent={_separator}
-      />
+    <SafeAreaView style={{flex:1,backgroundColor:"white"}}>
+        <FlatList
+          data={toJS(CampStore.camps)}
+          renderItem={({item}) => _renderItem(item)}
+        />
     </SafeAreaView>
   );
 };

@@ -53,7 +53,7 @@ const Home: React.FC = () => {
         name="chevron-forward-outline"
         type="ionicon"
         color={Colors.DARK_VANILLA}
-        onPress={() => console.log('hello')}
+        onPress={() => console.log('hello world')}
       />
     </View>
   );

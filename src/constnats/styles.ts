@@ -20,8 +20,8 @@ export default StyleSheet.create<Style>({
     },
     text: {
         color: Colors.RICH_BLACK,
-        fontFamily: 'Roboto-Bold',
-        fontSize: responsiveFontSize(30)
+        fontFamily: 'Roboto-Regular',
+        fontSize: responsiveFontSize(40)
     },
     icon: {
         width: 10,

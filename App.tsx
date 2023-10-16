@@ -1,7 +1,7 @@
 import React from 'react';
-import RootNavigator from './src/navigation';
 import { Provider } from 'mobx-react';
 import CampStore from './src/mobx/CampStore';
+import RootNavigator from './src/navigation/Index';
 
 
 function App(): JSX.Element {

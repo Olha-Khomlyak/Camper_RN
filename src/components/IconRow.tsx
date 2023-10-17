@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     width: screenWidth * 0.85,
     position: 'absolute',
     top: 15,
+    alignSelf:'center'
   },
 iconContainer: {
     backgroundColor: Colors.WHITE_TRANSPARENT,

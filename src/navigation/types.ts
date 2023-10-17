@@ -14,26 +14,8 @@ export type MainRouteProp<RouteName extends keyof MainStackParamList = MainRoute
     RouteName
 >
 
-
-// export type HomeStackNavigatorParamList = {
-//     Home: undefined,
-//     Details: {
-//         id:string,
-//     }
-// }
-
-// export type HomeScreenNavigationProp = NativeStackNavigationProp<
-//   HomeStackNavigatorParamList,
-//   'Home'
-// >;
-
-// export type DetailsScreenRouteProp = RouteProp<
-//   HomeStackNavigatorParamList,
-//   'Details'
-// >;
-
-// export type BottomTabNavigatorParamList = {
-//     Home: undefined;
-//     Details: undefined;
-//     Favourites: undefined;
-//   };
+export type BottomTabNavigatorParamList = {
+    Home: undefined;
+    Details: undefined;
+    Favourites: undefined;
+  };

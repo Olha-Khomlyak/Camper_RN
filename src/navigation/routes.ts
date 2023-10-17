@@ -1,4 +1,4 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { createStackNavigator } from '@react-navigation/stack';
 
 // an enum of all the screens we register in our routing setup, which will allow us to refer to screens via MainRoutes
 export enum MainRoutes {
@@ -12,8 +12,8 @@ export enum MainRoutes {
 export type MainStackParamList = {
     // Home  Stack
     [MainRoutes.HOME] : undefined
-    [MainRoutes.DETAILS] : {id: string}
+    [MainRoutes.DETAILS] : {index: number}
 
 }
 
-export const MainStack = createNativeStackNavigator<MainStackParamList>()
+export const MainStack = createStackNavigator<MainStackParamList>()

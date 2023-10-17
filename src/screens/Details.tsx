@@ -11,7 +11,7 @@ type DetailsProps = {
 const Details: React.FC<DetailsProps> = ({navigation, route}) => {
 
   useEffect(() => {
-    console.log(route.params.id);
+    console.log(route.params.index);
   }, []);
 
   return (

@@ -12,7 +12,6 @@ const BottomTabs = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home}/>
-      <Tab.Screen name="Details" component={Details} />
       <Tab.Screen name="Favourites" component={Favourites} />
     </Tab.Navigator>
   );

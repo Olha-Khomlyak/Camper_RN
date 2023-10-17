@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { Provider } from 'mobx-react';
 import CampStore from './src/mobx/CampStore';

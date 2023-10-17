@@ -18,6 +18,7 @@ import {Icon} from '@rneui/themed';
 import Colors from '../constnats/colors';
 import contStyles from '../constnats/styles';
 import { MainRoutes } from '../navigation/routes';
+import { findIndexByProperty } from '../utils/Utils';
 
 
 
@@ -43,7 +44,7 @@ const Home: React.FC = () => {
           name="chevron-forward-outline"
           type="ionicon"
           color={Colors.DARK_VANILLA}
-          onPress={() => navigation.navigate(MainRoutes.DETAILS, {id: item.id})}
+          onPress={() => navigation.navigate(MainRoutes.DETAILS, {index: findIndexByProperty(toJS(CampStore.camps), "id", item.id)})}
         />
       </View>
     </View>

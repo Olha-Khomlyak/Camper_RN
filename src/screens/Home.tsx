@@ -5,6 +5,7 @@ import {
   FlatList,
   StyleSheet,
   Image,
+  Pressable,
 } from 'react-native';
 import React, {useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -17,10 +18,8 @@ import {CampInfo} from '../mobx/types';
 import {Icon} from '@rneui/themed';
 import Colors from '../constnats/colors';
 import contStyles from '../constnats/styles';
-import { MainRoutes } from '../navigation/routes';
-import { findIndexByProperty } from '../utils/Utils';
-
-
+import {MainRoutes} from '../navigation/routes';
+import {findIndexByProperty} from '../utils/Utils';
 
 const Home: React.FC = () => {
   const navigation = useNavigation<MainNavigationProp<MainRoutes.HOME>>();
@@ -29,8 +28,16 @@ const Home: React.FC = () => {
     getData();
   }, []);
 
+
+  const seeDetails = (id: string, title: string) => {
+    navigation.navigate(MainRoutes.DETAILS, {
+      index: findIndexByProperty(toJS(CampStore.camps), 'id', id),
+      title: title,
+    })
+  }
+
   const _renderItem = (item: CampInfo) => (
-    <View style={styles.frame}>
+    <Pressable style={styles.frame} onPress={() => seeDetails(item.id, item.name)}>
       <View style={{flexDirection: 'row'}}>
         <Image style={styles.image} source={{uri: item.imageURLString}} />
         <View style={{marginLeft: 10}}>
@@ -44,10 +51,9 @@ const Home: React.FC = () => {
           name="chevron-forward-outline"
           type="ionicon"
           color={Colors.DARK_VANILLA}
-          onPress={() => navigation.navigate(MainRoutes.DETAILS, {index: findIndexByProperty(toJS(CampStore.camps), "id", item.id)})}
         />
       </View>
-    </View>
+    </Pressable>
   );
 
   return (

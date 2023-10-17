@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, {useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {HomeScreenNavigationProp} from '../navigation/types';
+import {MainNavigationProp} from '../navigation/types';
 import {observer} from 'mobx-react';
 import CampStore from '../mobx/CampStore';
 import {getData} from '../functionality/APIs/firebase';
@@ -17,9 +17,12 @@ import {CampInfo} from '../mobx/types';
 import {Icon} from '@rneui/themed';
 import Colors from '../constnats/colors';
 import contStyles from '../constnats/styles';
+import { MainRoutes } from '../navigation/routes';
+
+
 
 const Home: React.FC = () => {
-  const navigation = useNavigation<HomeScreenNavigationProp>();
+  const navigation = useNavigation<MainNavigationProp<MainRoutes.HOME>>();
 
   useEffect(() => {
     getData();
@@ -40,7 +43,7 @@ const Home: React.FC = () => {
           name="chevron-forward-outline"
           type="ionicon"
           color={Colors.DARK_VANILLA}
-          onPress={() => navigation.navigate("Details", {id: item.id})}
+          onPress={() => navigation.navigate(MainRoutes.DETAILS, {id: item.id})}
         />
       </View>
     </View>

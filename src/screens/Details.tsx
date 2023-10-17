@@ -1,13 +1,24 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React, {useEffect} from 'react';
+import {MainNavigationProp, MainRouteProp} from '../navigation/types';
+import {MainRoutes} from '../navigation/routes';
 
-const Details = () => {
+type DetailsProps = {
+  navigation: MainNavigationProp<MainRoutes.DETAILS>;
+  route: MainRouteProp<MainRoutes.DETAILS>;
+};
+
+const Details: React.FC<DetailsProps> = ({navigation, route}) => {
+
+  useEffect(() => {
+    console.log(route.params.id);
+  }, []);
 
   return (
     <View>
-      <Text>Details</Text>
+      <Text>Details:</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;

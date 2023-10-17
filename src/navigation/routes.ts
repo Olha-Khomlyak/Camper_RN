@@ -12,7 +12,7 @@ export enum MainRoutes {
 export type MainStackParamList = {
     // Home  Stack
     [MainRoutes.HOME] : undefined
-    [MainRoutes.DETAILS] : {index: number}
+    [MainRoutes.DETAILS] : {index: number, title: string}
 
 }
 

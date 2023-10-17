@@ -7,6 +7,7 @@ type Style = {
     title: TextStyle;
     icon: ImageStyle;
     text: TextStyle;
+    h1: TextStyle;
 };
 
 export default StyleSheet.create<Style>({
@@ -17,6 +18,11 @@ export default StyleSheet.create<Style>({
         color: Colors.RICH_BLACK,
         fontFamily: 'Roboto-Bold',
         fontSize: responsiveFontSize(50)
+    },
+    h1: {
+        color: Colors.RICH_BLACK,
+        fontFamily: 'Roboto-Bold',
+        fontSize: responsiveFontSize(70)
     },
     text: {
         color: Colors.RICH_BLACK,

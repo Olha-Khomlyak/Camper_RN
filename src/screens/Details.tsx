@@ -21,6 +21,7 @@ import Colors from '../constnats/colors';
 import IconRow from '../components/IconRow';
 import {ScrollView} from 'react-native-gesture-handler';
 import ActionButton from '../components/ActionButton';
+import Features from '../components/Features';
 
 type DetailsProps = {
   navigation: MainNavigationProp<MainRoutes.DETAILS>;
@@ -58,23 +59,29 @@ const Details: React.FC<DetailsProps> = ({navigation, route}) => {
         />
         <View style={styles.dataContainer}>
           <Text style={contStyles.h1}>{camp.name}</Text>
+          <Text style={contStyles.text}>{camp.region}</Text>
           <View style={{flexDirection: 'row'}}>
-            {camp.phoneNumber &&
-            <ActionButton
-              title={camp.phoneNumber}
-              btnColor={Colors.DARK_VANILLA}
-              iconName={'call-outline'}
-              action={() => Linking.openURL(`tel:${camp.phoneNumber}`)}
-            />}
-            {camp.webSite &&
-            <ActionButton
-              title="Visit website"
-              btnColor={Colors.DARK_VANILLA}
-              iconName={'globe-outline'}
-              action={() => openWebSite(camp.webSite)}
-            />}
+            {camp.phoneNumber && (
+              <ActionButton
+                title={camp.phoneNumber}
+                btnColor={Colors.DARK_VANILLA}
+                iconName={'call-outline'}
+                action={() => Linking.openURL(`tel:${camp.phoneNumber}`)}
+              />
+            )}
+            {camp.webSite && (
+              <ActionButton
+                title="Visit website"
+                btnColor={Colors.DARK_VANILLA}
+                iconName={'globe-outline'}
+                action={() => openWebSite(camp.webSite)}
+              />
+            )}
           </View>
           <Text style={contStyles.text}>{camp.about}</Text>
+          {Object.keys(camp.features).length != 0 && (
+            <Features data={camp.features} />
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>

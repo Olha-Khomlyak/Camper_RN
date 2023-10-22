@@ -8,26 +8,45 @@ type Style = {
     icon: ImageStyle;
     text: TextStyle;
     h1: TextStyle;
+    subtitle: TextStyle;
 };
+
+type commonStyle = {
+    textRegular: TextStyle;
+    textBold: TextStyle;
+}
+
+const commonStyles: commonStyle = {
+    textBold: {
+      color: Colors.RICH_BLACK,
+      fontFamily: 'Roboto-Bold',
+    },
+    textRegular: {
+        color: Colors.RICH_BLACK,
+        fontFamily: 'Roboto-Regular',
+      },
+  };
 
 export default StyleSheet.create<Style>({
     container: {
-        flex: 1
-    },
-    title: {
-        color: Colors.RICH_BLACK,
-        fontFamily: 'Roboto-Bold',
-        fontSize: responsiveFontSize(50)
+        flex: 1,
+        backgroundColor:Colors.WHITE
     },
     h1: {
-        color: Colors.RICH_BLACK,
-        fontFamily: 'Roboto-Bold',
-        fontSize: responsiveFontSize(70)
+        ...commonStyles.textBold,
+        fontSize: responsiveFontSize(30)
+    },
+    title: {
+        ...commonStyles.textBold,
+        fontSize: responsiveFontSize(20)
+    },
+    subtitle: {
+        ...commonStyles.textRegular,
+        fontSize: responsiveFontSize(18)
     },
     text: {
-        color: Colors.RICH_BLACK,
-        fontFamily: 'Roboto-Regular',
-        fontSize: responsiveFontSize(40)
+        ...commonStyles.textRegular,
+        fontSize: responsiveFontSize(14)
     },
     icon: {
         width: 10,
